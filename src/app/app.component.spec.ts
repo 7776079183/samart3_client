@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'smart3-web'`, () => {
+  it(`should have as title 'vivideas-solution'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('smart3-web');
+    expect(app.title).toEqual('vivideas-solution');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('smart3-web app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('vivideas-solution app is running!');
   });
 });

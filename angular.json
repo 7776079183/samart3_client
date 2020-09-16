@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "smart3-web"
+    }
+  },
+  "defaultProject": "smart3-web",
+  "cli": {
+    "analytics": false
+  }
 }

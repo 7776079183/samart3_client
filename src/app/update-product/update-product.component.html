@@ -1,0 +1,49 @@
+<app-header></app-header>
+<div style="width: 45%;padding-top: 4%;padding-left: 27%;">
+  <h1> UPDATE PRODUCT </h1>
+    <div class="divClass">
+      <form [formGroup]="updateProductForm" (ngSubmit)="udateProduct()">
+        <label for="lname">Name</label>
+        <input type="text" id="name" name="name" formControlName="name"  placeholder="Name.." [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+          <div *ngIf="f.name.errors.required" class="text-red"> Name is required </div>
+      </div>
+
+
+      <label for="lname">Category</label>
+        <select id="category" name="category" formControlName="category"  placeholder="category.." [ngClass]="{ 'is-invalid': submitted && f.category.errors }">
+          <option *ngFor="let category of categories; let i = index" [value]="category._id">{{ category.category  }}</option>
+        </select>
+        <div *ngIf="submitted && f.category.errors" class="invalid-feedback">
+          <div *ngIf="f.category.errors.required" class="text-red">Category is required </div>
+      </div>
+
+      <label for="lname">Price</label>
+      <input type="number" id="price" name="price" formControlName="price"  placeholder="Price.." [ngClass]="{ 'is-invalid': submitted && f.price.errors }">
+      <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
+        <div *ngIf="f.price.errors.required" class="text-red">Price is required</div>
+    </div>
+
+    <label for="lname">Size</label>
+      <select id="size" name="size" formControlName="size"  placeholder="Size" [ngClass]="{ 'is-invalid': submitted && f.size.errors }">
+      <option *ngFor="let size of sizes; let i = index" [value]="size._id">{{ size.size  }}</option>
+      </select>
+      <div *ngIf="submitted && f.size.errors" class="invalid-feedback">
+        <div *ngIf="f.size.errors.required" class="text-red">Size is required </div>
+    </div>
+
+    <label for="lname">Stock</label>
+    <input type="number" id="stock" name="stock" formControlName="stock"  placeholder="Stock" [ngClass]="{ 'is-invalid': submitted && f.stock.errors }">
+    <div *ngIf="submitted && f.stock.errors" class="invalid-feedback">
+      <div *ngIf="f.stock.errors.required" class="text-red">Stock is required </div>
+  </div>
+
+  <label for="lname">Description</label>
+    <input type="text" id="description" name="description" formControlName="description"  placeholder="Description" [ngClass]="{ 'is-invalid': submitted && f.description.errors }">
+    <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+      <div *ngIf="f.description.errors.required" class="text-red">Description is required </div>
+  </div>
+        <input type="submit" value="Add Product">
+      </form>
+      </div>
+      </div>
